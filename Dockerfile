@@ -6,3 +6,7 @@ COPY . /var/www/html/
 
 # Enable Apache mod_rewrite if needed (optional)
 RUN a2enmod rewrite
+
+RUN echo "ServerName localhost" > /etc/apache2/conf-available/servername.conf \
+    && a2enconf servername
+
